@@ -9,3 +9,16 @@ int main (void)
 {
     
 }
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main (void)
+{
+
+}
