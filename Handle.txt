@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define ll long long
+#define PI M_PI
+
 int main (void)
 {
     
