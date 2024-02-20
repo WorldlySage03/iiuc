@@ -1,1 +1,10 @@
-HoUse
+5
+cat
+rat
+pit
+apple
+car
+3
+cat
+yike
+apple
