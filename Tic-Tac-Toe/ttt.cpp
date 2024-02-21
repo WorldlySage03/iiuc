@@ -5,7 +5,7 @@ void gotoxy(int x, int y);
 
 int main (void)
 {
-    char rematch[2];
+    char rematch;
     do
     {
         int position_mem[9] = {0}, x[9], y[9];
@@ -43,7 +43,7 @@ int main (void)
 
         for (int i = 0; i < 9; i++)
         {
-            int a, temp, f, f_win_draw ;
+            int a, temp, f = i % 2, f_win_draw = 0;
             do
             {
                 temp = 0;
@@ -54,9 +54,6 @@ int main (void)
                 gotoxy(0, 0);
 
                 /// X's & O's turns
-
-                f = i % 2;
-                f_win_draw = 0;
 
                 if (f == 0) printf("Player O's Turn : ");
                 else printf("Player X's Turn : ");
@@ -107,8 +104,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[0]++;
-                    c[0] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -116,8 +113,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[1]++;
-                    c[1] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -125,8 +122,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[2]++;
-                    c[2] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -134,8 +131,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[3]++;
-                    c[3] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -143,8 +140,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[4]++;
-                    c[4] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -152,8 +149,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[5]++;
-                    c[5] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -161,8 +158,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[6]++;
-                    c[6] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -170,8 +167,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[7]++;
-                    c[7] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
 
@@ -179,8 +176,8 @@ int main (void)
                     gotoxy(x[a-1], y[a-1]);
                     printf("%c", c_x_o);
 
-                    position_mem[8]++;
-                    c[8] = c_x_o;
+                    position_mem[a - 1]++;
+                    c[a - 1] = c_x_o;
 
                     goto checker;
             }
@@ -217,16 +214,16 @@ int main (void)
                 gotoxy (0, 11);
 
                 printf("Would you like to play again? (Y/n) ");
-                scanf(" %c", &rematch[0]);
+                scanf(" %c", &rematch);
 
-                if (rematch[0] == 'y'|| rematch[0] == 'Y')
+                if (rematch == 'y'|| rematch == 'Y')
                     system("clear");
 
                 break;
             }
         }
     }
-    while (rematch[0] == 'y' || rematch[0] == 'Y');
+    while (rematch == 'y' || rematch == 'Y');
 }
 
 void gotoxy(int x, int y)
