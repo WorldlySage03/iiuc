@@ -1,0 +1,43 @@
+### Windows
+
+(Use Any)
+
+#include<windows.h>
+
+1. void gotoxy(short col, short row)
+{
+HANDEL h=GetStdHandel(STD_OUTPUT_HANDEL);
+COORD position={col,row};
+SetConsoleCursorPosition(h,position);
+}
+
+2. void gotoxy(int x, int y) {
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+### Linux
+
+void gotoxy(int x, int y)
+{
+    printf("%c[%d;%df",0x1B,y,x);
+}
+
+
+
+*** To use cstdlib we need .cpp
+
+### Clearing Terminal in Linux
+
+#include <cstdlib>
+
+system("cls");
+
+
+### Clearing Terminal in Linux
+
+#include <cstdlib>
+
+system("clear");
