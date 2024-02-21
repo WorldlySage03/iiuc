@@ -1,14 +1,5 @@
 #include <cstdlib>
-#include <ctype.h>
-#include <limits.h>
-#include <math.h>
-#include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define ll long long
-#define PI M_PI
 
 void gotoxy(int x, int y);
 
@@ -52,29 +43,31 @@ int main (void)
 
         for (int i = 0; i < 9; i++)
         {
-            /// Clearing the square from previous turn
-
-            gotoxy(0, 0);
-            printf("                   ");
-            gotoxy(0, 0);
-
-            /// X's & O's turns
-
-            int f = i % 2, f_win_draw = 0;
-
-            if (f == 0)
+            int a, temp, f, f_win_draw ;
+            do
             {
-                printf("Player O's Turn : ");
-            }
-            else
-            {
-                printf("Player X's Turn : ");
-            }
+                temp = 0;
+                /// Clearing the square from previous turn
 
-            /// Taking input
+                gotoxy(0, 0);
+                printf("                      ");
+                gotoxy(0, 0);
 
-            int a;
-            scanf("%d", &a);
+                /// X's & O's turns
+
+                f = i % 2;
+                f_win_draw = 0;
+
+                if (f == 0) printf("Player O's Turn : ");
+                else printf("Player X's Turn : ");
+
+                /// Taking input
+
+                scanf("%d", &a);
+
+                if (position_mem[a - 1] > 0) temp = 1;
+            }
+            while (temp == 1 || 10 < a || a < 1);
 
             gotoxy(0, 3);
             printf(" - | - | - \n");
