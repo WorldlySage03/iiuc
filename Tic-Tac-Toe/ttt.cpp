@@ -13,26 +13,39 @@ int main (void)
 
         /// Assigning X and Y axis value
 
-        x[0] = 2;
-        y[0] = 3;
-        x[1] = 6;
-        y[1] = 3;
-        x[2] = 10;
-        y[2] = 3;
-        x[3] = 2;
-        y[3] = 5;
-        x[4] = 6;
-        y[4] = 5;
-        x[5] = 10;
-        y[5] = 5;
-        x[6] = 2;
-        y[6] = 7;
-        x[7] = 6;
-        y[7] = 7;
-        x[8] = 10;
-        y[8] = 7;
+        for (int i = 0, j = 2; i < 9; i++, j += 4)
+        {
+            x[i] = j;
+            if (j == 10) j -= 12;
+        }
 
-        /// Printint the before match board
+        for (int i = 3, j = 3; i <= 9; i += 3, j += 2)
+        {
+            y[i - 1] = j;
+            y[i - 2] = j;
+            y[i - 3] = j;
+        }
+
+        // x[0] = 2;
+        // y[0] = 3;
+        // x[1] = 6;
+        // y[1] = 3;
+        // x[2] = 10;
+        // y[2] = 3;
+        // x[3] = 2;
+        // y[3] = 5;
+        // x[4] = 6;
+        // y[4] = 5;
+        // x[5] = 10;
+        // y[5] = 5;
+        // x[6] = 2;
+        // y[6] = 7;
+        // x[7] = 6;
+        // y[7] = 7;
+        // x[8] = 10;
+        // y[8] = 7;
+
+        /// Printing the board before match
 
         gotoxy(0, 3);
         printf(" - | - | - \n");
@@ -64,7 +77,7 @@ int main (void)
 
                 if (position_mem[a - 1] > 0) temp = 1;
             }
-            while (temp == 1 || 10 < a || a < 1);
+            while (temp == 1 || 9 < a || a < 1);
 
             gotoxy(0, 3);
             printf(" - | - | - \n");
