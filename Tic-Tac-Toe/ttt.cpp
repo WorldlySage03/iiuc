@@ -1,6 +1,14 @@
 #include <cstdlib>
 #include <stdio.h>
 
+/// Ansi color codes: https://gist.github.com/Prakasaka/219fe5695beeb4d6311583e79933a009
+
+#define ANSI_COLOR_RED "\e[1;31m"
+#define ANSI_COLOR_GREEN "\e[1;32m"
+#define ANSI_COLOR_YELLOW "\e[1;33m"
+#define ANSI_COLOR_PURPLE "\e[1;34m"
+#define ANSI_COLOR_RESET "\033[0m"
+
 void gotoxy(int x, int y);
 
 int main (void)
@@ -48,14 +56,16 @@ int main (void)
         /// Printing the board before match
 
         gotoxy(0, 3);
-        printf(" - | - | - \n");
+        printf(ANSI_COLOR_PURPLE " - | - | - \n");
         printf("---+---+---\n");
         printf(" - | - | - \n");
         printf("---+---+---\n");
-        printf(" - | - | - \n");
+        printf(" - | - | - \n" ANSI_COLOR_RESET);
 
         for (int i = 0; i < 9; i++)
         {
+            printf(ANSI_COLOR_RESET);
+
             int a, temp, f = i % 2, f_win_draw = 0;
             do
             {
@@ -68,8 +78,8 @@ int main (void)
 
                 /// X's & O's turns
 
-                if (f == 0) printf("Player O's Turn : ");
-                else printf("Player X's Turn : ");
+                if (f == 0) printf(ANSI_COLOR_RED "Player O's Turn : " ANSI_COLOR_RESET);
+                else printf(ANSI_COLOR_GREEN "Player X's Turn : " ANSI_COLOR_RESET);
 
                 /// Taking input
 
@@ -80,11 +90,11 @@ int main (void)
             while (temp == 1 || 9 < a || a < 1);
 
             gotoxy(0, 3);
-            printf(" - | - | - \n");
+            printf(ANSI_COLOR_PURPLE " - | - | - \n");
             printf("---+---+---\n");
             printf(" - | - | - \n");
             printf("---+---+---\n");
-            printf(" - | - | - \n");
+            printf(" - | - | - \n" ANSI_COLOR_RESET);
 
             /// Placing previous round moves
 
@@ -92,6 +102,9 @@ int main (void)
             {
                 if (position_mem[j] > 0)
                 {
+                    if (c[j] == 'O') printf(ANSI_COLOR_RED);
+                    else printf(ANSI_COLOR_GREEN);
+
                     gotoxy(x[j], y[j]);
                     printf("%c", c[j]);
                 }
@@ -101,6 +114,8 @@ int main (void)
 
                 else
                 {
+                    printf(ANSI_COLOR_RESET);
+
                     gotoxy(x[j], y[j]);
                     printf("%c", '-');
                 }
@@ -110,6 +125,9 @@ int main (void)
 
             char c_x_o;
             c_x_o = f == 0 ? 'O' : 'X';
+
+            if (c_x_o == 'O') printf(ANSI_COLOR_RED);
+            else printf(ANSI_COLOR_GREEN);
 
             switch (a)
             {
@@ -207,6 +225,8 @@ int main (void)
                 c[0] == c[4] && c[4] == c[8] ||
                 c[2] == c[4] && c[4] == c[6])
             {
+                printf(ANSI_COLOR_RESET);
+
                 gotoxy(0, 9);
                 printf("Player %c Is The Winner!!! 🥳🎉", c_x_o);
 
@@ -214,6 +234,8 @@ int main (void)
             }
             else if (i == 8)
             {
+                printf(ANSI_COLOR_RESET);
+
                 gotoxy(0, 9);
                 printf("Draw 😔");
 
@@ -226,17 +248,21 @@ int main (void)
             {
                 gotoxy (0, 11);
 
-                printf("Would you like to play again? (Y/n) ");
+                printf(ANSI_COLOR_YELLOW "Would you like to play again? (Y/n) ");
                 scanf(" %c", &rematch);
 
                 if (rematch == 'y'|| rematch == 'Y')
                     system("clear");
+
+                printf(ANSI_COLOR_RESET);
 
                 break;
             }
         }
     }
     while (rematch == 'y' || rematch == 'Y');
+
+    getchar();
 }
 
 void gotoxy(int x, int y)
