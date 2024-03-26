@@ -6,10 +6,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ll long long
 #define PI M_PI
+#define ll long long // %lld
+#define ull unsigned long long // %llu
+#define ld long double // %Lf
 
-int main (void)
+int main ()
 {
 
 }
@@ -22,7 +24,7 @@ int main (void)
 #include <iomanip>
 using namespace std;
 
-int main (void)
+int main ()
 {
 
 }
