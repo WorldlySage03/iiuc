@@ -7,14 +7,9 @@
 #include <string.h>
 
 #define PI M_PI
-<<<<<<< HEAD
 #define ll long long // %lld
 #define ull unsigned long long // %llu
 #define ld long double // %Lf
-=======
-#define ll long long
-#define ull unsigned long long
->>>>>>> be7169f5d2fcef4b96f6f93657f188efafa5a85f
 
 int main ()
 {
