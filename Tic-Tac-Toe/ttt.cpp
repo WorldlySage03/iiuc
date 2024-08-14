@@ -237,7 +237,7 @@ int main (void)
                 printf(ANSI_COLOR_RESET);
 
                 gotoxy(0, 9);
-                printf("Draw 😔");
+                printf("Draw ");
 
                 f_win_draw = 1;
             }

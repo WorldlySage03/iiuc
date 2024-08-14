@@ -1,0 +1,21 @@
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define ll long long
+#define loop(n) for (int i = 0; i < (n); i++)
+#define sp " "
+#define testcase int TeCa; cin >> TeCa; while (TeCa--)
+#define yes cout << "YES"
+#define no cout << "NO"
+#define input freopen("input.txt", "r", stdin);
+#define output freopen("output.txt", "w", stdout);
+
+int main ()
+{
+      
+}
+
