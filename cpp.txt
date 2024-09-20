@@ -6,7 +6,6 @@
 using namespace std;
 
 #define all(a) (a).begin(), (a).end()
-#define ll long long
 #define loop(n) for(int i = 0; i < (n); i++)
 #define pb push_back
 #define sp " "
@@ -15,6 +14,9 @@ using namespace std;
 #define NO cout << "NO" << endl;
 #define input freopen("input.txt", "r", stdin);
 #define output freopen("output.txt", "w", stdout);
+
+typedef long long ll;
+typedef vector <int> vi;
 
 int main ()
 {
