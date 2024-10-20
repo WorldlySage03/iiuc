@@ -2,29 +2,45 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-------------------------------------------------------------------------------
+
 #include <bits/stdc++.h>
-------------------------------------------------------------------------------
 using namespace std;
 
 #define all(a) (a).begin(), (a).end()
 #define rall(a) (a).rbegin(), (a).rend()
-#define loop(n) for (int i = 0; i < (n); i++)
+#define loop(n) for(int i = 0; i < (n); i++)
 #define pb push_back
 #define sp " "
 #define sz(a) (a).size()
+#define sf scanf
+#define pf printf
 #define testcase int TeCa; cin >> TeCa; while(TeCa--)
-#define YES cout << "YES" << endl
-#define NO cout << "NO" << endl
+#define yes cout << "YES"
+#define no cout << "NO"
 #define input freopen("input.txt", "r", stdin);
 #define output freopen("output.txt", "w", stdout);
 
 typedef long long ll;
 typedef vector<int> vi;
 typedef vector<long long> vl;
+typedef pair<int, int> pii;
+
+bool comp(pair<int, int> a, pair<int, int> b)
+{
+      //if(a.second == b.second) return a.first < b.first;
+      return a.second < b.second; // Low to High
+}
+
+void Solution()
+{
+      
+}
 
 int main()
 {
-	
-	return 0;
+      ios::sync_with_stdio(0);
+      cin.tie(0); cout.tie(0);
+
+      testcase
+      Solution();
 }
