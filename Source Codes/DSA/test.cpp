@@ -1,33 +1,18 @@
-#include <algorithm>
-#include <cmath>
-#include <iostream>
-#include <vector>
-
 #include <bits/stdc++.h>
 using namespace std;
 
-#define loop(n) for (int i = 0; i < (n); i++)
-#define sp " "
-#define el '\n'
-#define eps 1e-6
-
-#define gcd(a, b) __gcd(a, b)
-#define lcm(a, b) (a / __gcd(a, b)) * b
-
 #define all(a) (a).begin(), (a).end()
 #define rall(a) (a).rbegin(), (a).rend()
-#define pf push_front
+#define el '\n'
+#define sp " "
+#define loop(n) for (int i = 0; i < (n); i++)
 #define pb push_back
-#define rmf pop_front()
-#define rmb pop_back()
-#define sz(a) (int) (a).size()
-
+#define sz(a) (a).size()
+#define sf scanf
+#define pf printf
+#define testcase int TeCa; cin >> TeCa; while (TeCa--)
 #define yes cout << "YES"
 #define no cout << "NO"
-
-#define sf scanf
-#define prf printf
-#define testcase int TeCa; cin >> TeCa; while (TeCa--)
 #define input freopen("input.txt", "r", stdin)
 #define output freopen("output.txt", "w", stdout)
 
@@ -36,8 +21,6 @@ typedef unsigned long long ull;
 typedef string str;
 typedef vector<int> vi;
 typedef vector<long long> vl;
-typedef vector<char> vc;
-typedef vector<string> vs;
 typedef vector<vector<int>> Matrix;
 typedef pair<int, int> pii;
 
@@ -49,7 +32,11 @@ bool comp(pair<int, int> a, pair<int, int> b)
 
 void Solution()
 {
+      set<int> a = {2, 3, 4}, b = {5, 6, 7};
+      a = b;
 
+      for (auto i : a)
+            cout << i << sp;
 }
 
 int main()
@@ -58,12 +45,11 @@ int main()
       cin.tie(0); cout.tie(0);
 
       #ifndef ONLINE_JUDGE
-            input;
+            //input;
       #endif
 
-      testcase
+      //testcase
       Solution();
 
       return 0;
 }
-
