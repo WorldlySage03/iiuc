@@ -1,0 +1,37 @@
+##Segment-4
+Unary operator overloading with/without friend function
+https://ideone.com/DX8LI1
+
+
+##Segment-5
+Diamond problem
+https://ideone.com/1rFVp3
+
+Hip-hip hooray problem
+obc.A::cheers() or, obc.B::cheers()
+
+
+##Segment-6
+Virtual Function(example)
+1. https://ideone.com/f9rQEN // Probably similar ashbe (Shape related example)
+2. https://ideone.com/1DTlfS // Pure virtual function
+
+Binding
+https://ideone.com/kbtNeF
+
+
+##Segment-7
+Generic function & syntax && Template 
+1. https://ideone.com/pIZenl // Function
+2. https://ideone.com/xgKhwo // Class
+
+Exception handling
+https://ideone.com/HTYwwS
+
+
+##Segment-8
+Formatted input-output- width(), precision(), fill(), setf()
+https://ideone.com/KtIh0L
+
+File handling
+https://ideone.com/XS7SX7
