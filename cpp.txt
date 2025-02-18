@@ -1,8 +1,3 @@
-#include <algorithm>
-#include <cmath>
-#include <iostream>
-#include <vector>
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,12 +13,13 @@ using namespace std;
 #define rall(a) (a).rbegin(), (a).rend()
 #define pf push_front
 #define pb push_back
+#define eb emplace_back
 #define rmf pop_front()
 #define rmb pop_back()
 #define sz(a) (int) (a).size()
 
-#define yes cout << "YES"
-#define no cout << "NO"
+#define yes cout << "Yes"
+#define no cout << "No"
 
 #define sf scanf
 #define prf printf
@@ -33,18 +29,23 @@ using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-typedef string str;
 typedef vector<int> vi;
-typedef vector<long long> vl;
+typedef vector<long long> vll;
 typedef vector<char> vc;
+typedef vector<bool> vb;
 typedef vector<string> vs;
 typedef vector<vector<int>> Matrix;
 typedef pair<int, int> pii;
 
-bool comp(pair<int, int> a, pair<int, int> b)
+bool comp(pair<int, int> p1, pair<int, int> p2)
 {
-      //if(a.second == b.second) return a.first < b.first;
-      return a.second < b.second; // Low to High
+      if (p1.second == p2.second) return p1.first < p2.first;
+      return p1.second < p2.second;
+}
+
+void preCalc()
+{
+
 }
 
 void Solution()
@@ -57,13 +58,14 @@ int main()
       ios::sync_with_stdio(0);
       cin.tie(0); cout.tie(0);
 
+      //preCalc();
+
       #ifndef ONLINE_JUDGE
             input;
       #endif
 
-      testcase
+      //testcase
       Solution();
 
       return 0;
 }
-
