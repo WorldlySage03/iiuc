@@ -1,0 +1,95 @@
+-------------------------------
+# Binary Search
+-------------------------------
+
+binary_search(vector.begin(), vector.end(), item);
+
+// Returns true or false
+
+-------------------------------
+# Lower Bound
+-------------------------------
+
+lower_bound(vector.begin(), vector.end(), val);
+
+// Returns iterator
+// Lower bound returns the minimum position in which if we insert an element the array will still be sorted
+
+vector<int> a = {3, 4, 6, 7};
+lower_bound(a.begin(), a.end(), 3); // Will return 0
+lower_bound(a.begin(), a.end(), 5); // Will return 2
+
+-------------------------------
+# Upper Bound
+-------------------------------
+
+upper_bound(vector.begin(), vector.end(), val);
+
+// Upper bound returns the maximum position in which if we insert an element the array will still be sorted
+
+vector<int> a = {3, 4, 6, 7};
+lower_bound(a.begin(), a.end(), 3); // Will return 1
+lower_bound(a.begin(), a.end(), 5); // Will return 2
+
+-------------------------------
+# Priority Queue
+-------------------------------
+
+priority_queue<int, vector<int>, greater<>> a; // Min-heap
+priority_queue<int, vector<int>> a; // Max-heap
+priority_queue<int> a; // Max-heap with vector default
+
+a.push(x) // Pushes and element in the heap
+a.top()   // Return the first element
+a.pop()   // Removes the first element
+a.empty() // Check if empty and returns true or false
+a.size()  // Returns the size
+
+-------------------------------
+# Map
+-------------------------------
+
+Name.count(u) == 0: Key u is not in the map
+Name.count(u) == 1: Key u is already in the map
+
+-------------------------------
+# Ordered Set
+-------------------------------
+
+// C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++\ext\pb_ds\detail\resize_policy -> Remove number after hpp
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_multiset;
+
+// greater<int> or, greater_equal<int>
+// find_by_order, order_of_key
+
+cout << "0nd element: " << *a.find_by_order(0) << endl;
+cout << "2nd element: " << *a.find_by_order(2) << endl;
+
+cout << "No. of elems smaller than 6: " << a.order_of_key(6) << endl;
+
+auto it = a.find_by_order(a.order_of_key(arr[i - k]));
+a.erase(it);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
