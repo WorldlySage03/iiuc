@@ -1,61 +1,64 @@
 -------------------------------
-# Binary Search
+# Stack - (LIFO)
 -------------------------------
+● stack <int> st;
 
-binary_search(vector.begin(), vector.end(), item);
+st.push(x) – Adds an element x to the top of the stack. O(1)
+st.pop() – Removes the top element from the stack. O(1)
+st.top() – Returns the value of the top element without removing it. O(1)
+st.empty() – Checks if the stack is empty.
+st.size() – Returns the number of elements in the stack.
 
-// Returns true or false
-
--------------------------------
-# Lower Bound
--------------------------------
-
-lower_bound(vector.begin(), vector.end(), val);
-
-// Returns iterator
-// Lower bound returns the minimum position in which if we insert an element the array will still be sorted
-
-vector<int> a = {3, 4, 6, 7};
-lower_bound(a.begin(), a.end(), 3); // Will return 0
-lower_bound(a.begin(), a.end(), 5); // Will return 2
+https://www.hackerearth.com/problem/algorithm/killer-monsters-0b5cb283/
 
 -------------------------------
-# Upper Bound
+# Queue - (FIFO)
 -------------------------------
+● queue <int> q;
 
-upper_bound(vector.begin(), vector.end(), val);
+q.push(x) – Adds an element x to the end (rear) of the queue. O(1)
+q.pop() – Removes the front element from the queue. O(1)
+q.front() – Returns the first element without removing it. O(1)
+q.back() – Returns the last element in the queue. O(1)
+q.empty() – Checks if the queue is empty.
+q.size() – Returns the number of elements in the queue.
 
-// Upper bound returns the maximum position in which if we insert an element the array will still be sorted
+https://www.hackerearth.com/problem/algorithm/empty-array-31ed638c/
 
-vector<int> a = {3, 4, 6, 7};
-lower_bound(a.begin(), a.end(), 3); // Will return 1
-lower_bound(a.begin(), a.end(), 5); // Will return 2
+-------------------------------
+# Deque - (LIFO & FIFO)
+-------------------------------
+● deque <int> dq;
+
+dq.push_back(x) – Inserts element x at the rear (end).
+dq.push_front(x) – Inserts element x at the front.
+dq.pop_back() – Removes the last element.
+dq.pop_front() – Removes the first element.
+dq.front() – Returns the first element.
+dq.back() – Returns the last element.
+dq.at(index) – Returns the element at the specified index.
+dq.empty() – Checks if the deque is empty.
+dq.size() – Returns the number of elements in the deque.
+dq.clear() – Removes all elements from the deque.
+dq.insert(position, value) – Inserts an element at a specific position.
+dq.erase(position) – Removes an element from a specific position.
 
 -------------------------------
 # Priority Queue
 -------------------------------
+● priority_queue<int> a; // Max-heap with vector default
+● priority_queue<int, vector<int>> a; // Max-heap
+● priority_queue<int, vector<int>, greater<>> a; // Min-heap
 
-priority_queue<int, vector<int>, greater<>> a; // Min-heap
-priority_queue<int, vector<int>> a; // Max-heap
-priority_queue<int> a; // Max-heap with vector default
-
-a.push(x) // Pushes and element in the heap
-a.top()   // Return the first element
-a.pop()   // Removes the first element
-a.empty() // Check if empty and returns true or false
-a.size()  // Returns the size
-
--------------------------------
-# Map
--------------------------------
-
-Name.count(u) == 0: Key u is not in the map
-Name.count(u) == 1: Key u is already in the map
+a.push(x) - Pushes and element in the heap. O(log n)
+a.pop() - Removes the first element. O(log n)
+a.top() - Return the first element. O(1)
+a.empty() - Check if empty and returns true or false.
+a.size() - Returns the size.
 
 -------------------------------
 # Ordered Set
 -------------------------------
-
 // C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++\ext\pb_ds\detail\resize_policy -> Remove number after hpp
 
 #include <ext/pb_ds/assoc_container.hpp>
@@ -75,6 +78,44 @@ cout << "No. of elems smaller than 6: " << a.order_of_key(6) << endl;
 
 auto it = a.find_by_order(a.order_of_key(arr[i - k]));
 a.erase(it);
+
+-------------------------------
+# Map
+-------------------------------
+Name.count(u) == 0: Key u is not in the map
+Name.count(u) == 1: Key u is already in the map
+
+-------------------------------
+# Binary Search
+-------------------------------
+binary_search(vector.begin(), vector.end(), item);
+
+// Returns true or false
+
+-------------------------------
+# Lower Bound
+-------------------------------
+lower_bound(vector.begin(), vector.end(), val);
+
+// Returns iterator
+// Lower bound returns the minimum position in which if we insert an element the array will still be sorted
+
+vector<int> a = {3, 4, 6, 7};
+lower_bound(a.begin(), a.end(), 3); // Will return 0
+lower_bound(a.begin(), a.end(), 5); // Will return 2
+
+-------------------------------
+# Upper Bound
+-------------------------------
+upper_bound(vector.begin(), vector.end(), val);
+
+// Upper bound returns the maximum position in which if we insert an element the array will still be sorted
+
+vector<int> a = {3, 4, 6, 7};
+lower_bound(a.begin(), a.end(), 3); // Will return 1
+lower_bound(a.begin(), a.end(), 5); // Will return 2
+
+
 
 
 
