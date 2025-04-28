@@ -1,4 +1,12 @@
 -------------------------------
+# String
+-------------------------------
+stoi(str)
+to_string(num)
+s.erase(s.begin(), s.begin() + n); - Erases n characters
+s = a.substr(i, n); - Position from where to take and how many elements to take
+
+-------------------------------
 # Stack - (LIFO)
 -------------------------------
 ● stack <int> st;
@@ -30,18 +38,18 @@ https://www.hackerearth.com/problem/algorithm/empty-array-31ed638c/
 -------------------------------
 ● deque <int> dq;
 
-dq.push_back(x) – Inserts element x at the rear (end).
-dq.push_front(x) – Inserts element x at the front.
-dq.pop_back() – Removes the last element.
-dq.pop_front() – Removes the first element.
-dq.front() – Returns the first element.
-dq.back() – Returns the last element.
-dq.at(index) – Returns the element at the specified index.
+dq.push_front(x) – Inserts element x at the front. O(1)
+dq.push_back(x) – Inserts element x at the rear (end). O(1)
+dq.pop_front() – Removes the first element. O(1)
+dq.pop_back() – Removes the last element. O(1)
+dq.front() – Returns the first element. O(1)
+dq.back() – Returns the last element. O(1)
+dq.at(index)/dq[index] – Returns the element at the specified index. O(1)
 dq.empty() – Checks if the deque is empty.
 dq.size() – Returns the number of elements in the deque.
 dq.clear() – Removes all elements from the deque.
-dq.insert(position, value) – Inserts an element at a specific position.
-dq.erase(position) – Removes an element from a specific position.
+dq.insert(position, value) – Inserts an element at a specific position. O(n)
+dq.erase(position) – Removes an element from a specific position. O(n)
 
 -------------------------------
 # Priority Queue

@@ -1,0 +1,819 @@
+--------------------------------------------------
+1
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+      int n, m;
+      cin >> n >> m;
+
+      vector<vector<int>> a(n, vector<int> (m));
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cin >> a[i][j];
+            }
+      }
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = i; j < m; j++)
+            {
+                  swap(a[j][i], a[i][j]);
+            }
+      }
+
+      cout << "\n";
+      for (int i = 0; i < m; i++)
+      {
+            for (int j = 0; j < n; j++)
+            {
+                  cout << a[i][j] << " ";
+            }
+            cout << "\n";
+      }
+}
+
+--------------------------------------------------
+2
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+#define sp " "
+#define pb push_back
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int) (a).size()
+
+int main()
+{
+      int n, m;
+      cin >> n >> m;
+
+      vector<vector<int>> a(n, vector<int> (m)), b(n, vector<int> (m));
+
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cin >> a[i][j];
+            }
+      }
+      cout << el;
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cin >> b[i][j];
+            }
+      }
+      cout << el;
+
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  a[i][j] += b[i][j];
+            }
+      }
+
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cout << a[i][j] << sp;
+            }
+            cout << el;
+      }
+      cout << el;
+}
+
+--------------------------------------------------
+3
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+#define sp " "
+#define pb push_back
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int) (a).size()
+
+int main()
+{
+      int n, m;
+      cin >> n >> m;
+
+      vector<vector<int>> a(n, vector<int> (m));
+      vector<int> row, col;
+
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cin >> a[i][j];
+            }
+      }
+      cout << el;
+
+      for (int i = 0; i < n; i++)
+      {
+            int t = 0;
+            for (int j = 0; j < m; j++)
+            {
+                  t += a[i][j];
+            }
+            col.pb(t);
+      }
+
+      for (int i = 0; i < m; i++)
+      {
+            int t = 0;
+            for (int j = 0; j < n; j++)
+            {
+                  t += a[j][i];
+            }
+            row.pb(t);
+      }
+      cout << el;
+
+      for (auto i: col) cout << i << sp;
+      cout << el;
+      for (auto i: row) cout << i << sp;
+      cout << el;
+}
+
+--------------------------------------------------
+4
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+      int r1, c1, r2, c2;
+
+      cin >> r1 >> c1;
+      vector<vector<int>> a(r1, vector<int>(c1));
+      for (int i = 0; i < r1; i++)
+      {
+            for (int j = 0; j < c1; j++)
+            {
+                  cin >> a[i][j];
+            }
+      }
+
+      cin >> r2 >> c2;
+      vector<vector<int>> b(r2, vector<int>(c2));
+      for (int i = 0; i < r2; i++)
+      {
+            for (int j = 0; j < c2; j++)
+            {
+                  cin >> b[i][j];
+            }
+      }
+
+      if (c1 != r2) cout << "Multiplication not possible!\n";
+      else
+      {
+            vector<vector<int>> ans(r1, vector<int>(c2));
+
+            for (int i = 0; i < r1; i++)
+            {
+                  for (int j = 0; j < c2; j++)
+                  {
+                        long long sum = 0;
+                        for (int l = 0; l < c1; l++)
+                        {
+                              sum += a[i][l] * b[l][j];
+                        }
+                        ans[i][j] = sum;
+                  }
+            }
+
+            cout << "\n";
+            for (int i = 0; i < r1; i++)
+            {
+                  for (int j = 0; j < c2; j++)
+                  {
+                        cout << ans[i][j] << " ";
+                  }
+                  cout << "\n";
+            }
+      }
+}
+
+--------------------------------------------------
+5
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+#define sp " "
+#define pb push_back
+#define all(a) (a).begin(), (a).end()
+#define sz(a) (int) (a).size()
+
+int main()
+{
+      int n, m, cnt = 0;
+      cin >> n >> m;
+
+      vector<vector<int>> a(n, vector<int> (m));
+
+      for (int i = 0; i < n; i++)
+      {
+            for (int j = 0; j < m; j++)
+            {
+                  cin >> a[i][j];
+                  if (a[i][j] == 0) cnt++;
+            }
+      }
+
+      if (n * m / 2.0 <= cnt) cout << "It is a Sparse Matrix\n";
+      else cout << "It is not a Sparse Matrix\n";
+}
+
+--------------------------------------------------
+6
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *first, *ptr;
+      first = new Node();
+      ptr = first;
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i + 1 != n)
+            {
+                  ptr->next = new Node();
+                  ptr = ptr->next;
+            }
+            else ptr->next = nullptr;
+      }
+
+      ptr = first;
+      while (ptr != nullptr)
+      {
+            cout << ptr->num << " ";
+            ptr = ptr->next;
+      }
+      cout << "\n";
+}
+
+--------------------------------------------------
+7
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *first, *ptr;
+      first = new Node();
+      ptr = first;
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i + 1 != n)
+            {
+                  ptr->next = new Node();
+                  ptr = ptr->next;
+            }
+            else ptr->next = nullptr;
+      }
+
+      int item, pos = 1;
+      cin >> item;
+
+      ptr = first;
+      while (ptr != nullptr)
+      {
+            if (ptr->num == item)
+            {
+                  cout << "Item found at index " << pos << "\n";
+                  return 0;
+            }
+            ptr = ptr->next;
+            pos++;
+      }
+      cout << "Item not found\n";
+}
+
+--------------------------------------------------
+8
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *first, *ptr;
+      first = new Node();
+      ptr = first;
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i + 1 != n)
+            {
+                  ptr->next = new Node();
+                  ptr = ptr->next;
+            }
+            else ptr->next = nullptr;
+      }
+
+      int item, pos, i = 1;
+      cin >> item >> pos;
+      ptr = first;
+
+      if (pos == 1)
+      {
+            Node *temp = new Node();
+            temp->num = item;
+            temp->next = first;
+
+            first = temp;
+      }
+      else
+      {
+            while (ptr != nullptr)
+            {
+                  if (i + 1 == pos)
+                  {
+                        Node *temp = ptr->next;
+                        ptr->next = new Node();
+                        ptr = ptr->next;
+                        ptr->num = item;
+                        ptr->next = temp;
+                        break;
+                  }
+                  ptr = ptr->next;
+                  i++;
+            }
+      }
+
+      ptr = first;
+      while (ptr != nullptr)
+      {
+            cout << ptr->num << " ";
+            ptr = ptr->next;
+      }
+      cout << "\n";
+}
+
+--------------------------------------------------
+9
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *first, *ptr;
+      first = new Node();
+      ptr = first;
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i + 1 != n)
+            {
+                  ptr->next = new Node();
+                  ptr = ptr->next;
+            }
+            else ptr->next = nullptr;
+      }
+
+      int item, pos, i = 1;
+      cin >> pos;
+      ptr = first;
+
+      if (pos == 1)
+      {
+            item = first->num;
+            first = first->next;
+      }
+      else
+      {
+            while (ptr != nullptr)
+            {
+                  if (i + 1 == pos)
+                  {
+                        Node *temp = ptr;
+                        ptr = ptr->next;
+                        item = ptr->num;
+                        temp->next = ptr->next;
+                        break;
+                  }
+                  ptr = ptr->next;
+                  i++;
+            }
+      }
+
+      cout << "Deleted: " << item << "\n";
+      ptr = first;
+      while (ptr != nullptr)
+      {
+            cout << ptr->num << " ";
+            ptr = ptr->next;
+      }
+      cout << "\n";
+}
+
+--------------------------------------------------
+10
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *start, *ptr;
+      start = new Node();
+      ptr = start;
+
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i < n - 1)
+            {
+                  ptr->next = new Node();
+                  ptr = ptr->next;
+            }
+      }
+      ptr->next = start;
+
+      ptr = start;
+      for (int i = 0; i < n + 1; i++)
+      {
+            cout << ptr->num << " ";
+            ptr = ptr->next;
+      }
+      cout << '\n';
+}
+
+--------------------------------------------------
+11
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node
+{
+      int num;
+      Node *next, *prev;
+};
+
+int main()
+{
+      int n;
+      cin >> n;
+
+      Node *first, *ptr;
+      first = new Node();
+      ptr = first;
+      first->prev = nullptr;
+
+      for (int i = 0; i < n; i++)
+      {
+            cin >> ptr->num;
+
+            if (i + 1 != n)
+            {
+                  ptr->next = new Node();
+                  ptr->next->prev = ptr;
+                  ptr = ptr->next;
+            }
+            else ptr->next = nullptr;
+      }
+
+      ptr = first;
+      while (ptr != nullptr)
+      {
+            cout << ptr->num << " ";
+            ptr = ptr->next;
+      }
+      cout << "\n";
+}
+
+--------------------------------------------------
+12
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+
+int main()
+{
+      int length;
+      string s;
+
+      cout << "Input string S: ";
+      getline(cin, s);
+
+      for (length = 0; s[length] != '\0'; length++) {}
+      cout << "Length of string S: " << length << el << el;
+
+
+      string s1, s2;
+      cout << "Input string S2: ";
+      getline(cin, s2);
+
+      for (int i = 0; s2[i]; i++)
+      {
+            s1 += s2[i];
+      }
+      cout << "S1: " << s1 << el;
+      cout << "S2: " << s2 << el << el;
+
+
+      cout << "Input string S1: ";
+      getline(cin, s1);
+      cout << "Input string S2: ";
+      getline(cin, s2);
+
+      for (int i = 0; s2[i]; i++)
+      {
+            s1 += s2[i];
+      }
+      cout << "S1: " << s1 << el;
+      cout << "S2: " << s2 << el << el;
+
+
+      cout << "Input string S1: ";
+      cin >> s1;
+      cout << "Input string S2: ";
+      cin >> s2;
+
+      for (int i = 0; s1[i] && s2[i]; i++)
+      {
+            if (s1[i] < s2[i])
+            {
+                  cout << "S1 is smaller\n\n";
+                  break;
+            }
+            else if (s1[i] > s2[i])
+            {
+                  cout << "S2 is smaller\n\n";
+                  break;
+            }
+
+            if (!s1[i + 1] || !s2[i + 1])
+            {
+                  if (!s1[i + 1] && !s2[i + 1]) cout << "Both are equal\n\n";
+                  else if (!s1[i + 1]) cout << "S1 is smaller\n\n";
+                  else if (!s2[i + 1]) cout << "S2 is smaller\n\n";
+                  break;
+            }
+      }
+
+
+      cin.ignore();
+      cout << "Input string S: ";
+      getline(cin, s);
+
+      for (length = 0; s[length] != '\0'; length++) {}
+      for (int i = 0, j = length - 1; i < j; i++, j--)
+      {
+            swap(s[i], s[j]);
+      }
+      cout << "S: " << s << el << el;
+}
+
+--------------------------------------------------
+13
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+
+int main()
+{
+      string t, s;
+      int k;
+
+      getline(cin, t);
+      getline(cin, s);
+      cin >> k;
+
+      int lt = 0, ls = 0;
+      for (lt = 0; t[lt] != '\0'; lt++) {}
+      for (ls = 0; s[ls] != '\0'; ls++) {}
+
+      string ans;
+      for (int i = 0; i < k - 1; i++)
+      {
+            ans += t[i];
+      }
+      for (int i = 0; i < ls; i++)
+      {
+            ans += s[i];
+      }
+      for (int i = k - 1; i < lt; i++)
+      {
+            ans += t[i];
+      }
+
+      cout << ans << el;
+}
+
+--------------------------------------------------
+14
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+
+int main()
+{
+      string t;
+      int k, l;
+
+      getline(cin, t);
+      cin >> k >> l;
+
+      int lt = 0;
+      for (lt = 0; t[lt] != '\0'; lt++) {}
+
+      string ans;
+      for (int i = 0; i < k - 1; i++)
+      {
+            ans += t[i];
+      }
+      for (int i = k + l - 1; i < lt; i++)
+      {
+            ans += t[i];
+      }
+
+      cout << ans << el;
+}
+
+--------------------------------------------------
+15
+--------------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+      string s, p;
+      getline(cin, s);
+      getline(cin, p);
+
+      int n = s.size(), m = p.size();
+      for (int i = 0; i < n - m + 1; i++)
+      {
+            bool found = true;
+            for (int j = 0; j < m; j++)
+            {
+                  if (s[i + j] != p[j])
+                  {
+                        found = false;
+                        break;
+                  }
+            }
+            if (found)
+            {
+                  cout << i + 1 << "\n";
+                  return 0;
+            }
+      }
+
+      cout << "Pattern is not present in the string\n";
+}
+
+--------------------------------------------------
+16
+--------------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define el "\n"
+
+int main()
+{
+      string t, p, q;
+      getline(cin, t);
+      getline(cin, p);
+      getline(cin, q);
+
+      int lt = 0, lp = 0, lq = 0;
+      for (lt = 0; t[lt] != '\0'; lt++) {}
+      for (lp = 0; p[lp] != '\0'; lp++) {}
+      for (lq = 0; q[lq] != '\0'; lq++) {}
+
+      int pos = -1;
+      for (int i = 0; i < lt - lp + 1; i++)
+      {
+            bool match = true;
+            for (int j = 0; j < lp; j++)
+            {
+                  if (t[i + j] != p[j])
+                  {
+                        match = false;
+                        break;
+                  }
+            }
+            if (match)
+            {
+                  pos = i;
+                  break;
+            }
+      }
+
+      if (pos == -1) cout << t << el;
+      else
+      {
+            string ans;
+            for (int i = 0; i < pos; i++)
+            {
+                  ans += t[i];
+            }
+            for (int i = 0; i < lq; i++)
+            {
+                  ans += q[i];
+            }
+            for (int i = pos + lp; i < lt; i++)
+            {
+                  ans += t[i];
+            }
+            cout << ans << el;
+      }
+}

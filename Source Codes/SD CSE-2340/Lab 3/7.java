@@ -1,45 +1,28 @@
 import java.util.Scanner;
-import java.lang.Math;
-import java.lang.String;
 
-public class Main
-{
-      public static void main(String[] args)
-      {
-            Scanner input = new Scanner(System.in);
+public class RockPaperScissors {
+      public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Welcome to the game of Rock, Paper & Scissors!");
-            System.out.println("What is your move? (1-Rock), (2-Paper), (3-Scissor)");
-            int user_choice = input.nextInt();
-            int random = (int) (Math.random() * 10);
+            System.out.println("Let's play Rock, Paper, Scissors!");
+            System.out.print("Enter Player 1's choice (rock, paper, or scissors): ");
+            String player1Choice = scanner.nextLine().toLowerCase();
 
-            /*
-             * 1 - 3 Win
-             * 4 - 6 Draw
-             * 7 - 9 Lose
-             */
+            System.out.print("Enter Player 2's choice (rock, paper, or scissors): ");
+            String player2Choice = scanner.nextLine().toLowerCase();
 
-            if (random <= 3)
+            if (player1Choice.equals(player2Choice))
             {
-                  if (user_choice == 1) System.out.println("Computer plays Scissor.");
-                  else if (user_choice == 2) System.out.println("Computer plays Rock.");
-                  else System.out.println("Computer plays Paper.");
-                  System.out.println("You Win! :)");
+                  System.out.println("It's a tie!");
             }
-            else if (random <= 6)
-            {
-                  if (user_choice == 1) System.out.println("Computer plays Rock.");
-                  else if (user_choice == 2) System.out.println("Computer plays Paper.");
-                  else System.out.println("Computer plays Scissor.");
-                  System.out.println("It's a Draw! :|");
+            else if (player1Choice.equals("rock") && player2Choice.equals("scissors") ||
+                     player1Choice.equals("scissors") && player2Choice.equals("paper") ||
+                     player1Choice.equals("paper") && player2Choice.equals("rock")) {
+                  System.out.println("Player 1 wins!");
             }
             else
             {
-                  if (user_choice == 1) System.out.println("Computer plays Paper.");
-                  else if (user_choice == 2) System.out.println("Computer plays Scissor.");
-                  else System.out.println("Computer plays Rock.");
-                  System.out.println("Computer Wins! :(");
+                  System.out.println("Player 2 wins!");
             }
       }
 }
-
